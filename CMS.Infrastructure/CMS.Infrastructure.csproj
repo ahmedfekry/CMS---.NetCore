@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CMS.Core\CMS.Core.csproj" />
+    <ProjectReference Include="..\CMS.DataAccess\CMS.DataAccess.csproj" />
     <ProjectReference Include="..\CMS.Models\CMS.Models.csproj" />
   </ItemGroup>
 
