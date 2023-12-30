@@ -1,4 +1,4 @@
-﻿using CMS.Core.Authentication;
+﻿using CMS.Core.Services;
 using CMS.Models.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

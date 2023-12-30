@@ -12,6 +12,6 @@ namespace CMS.Core.Repositories
         Task<T> Get(Expression<Func<T, bool>> filters);
         Task<IEnumerable<T>> GetAllAsync();
         void Delete(T entity);
-        Task<IEnumerable<T>> Add(T entity);
+        T Add(T entity);
     }
 }

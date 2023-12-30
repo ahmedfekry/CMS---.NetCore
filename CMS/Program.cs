@@ -1,13 +1,13 @@
-
-using CMS.Core.Authentication;
+using CMS.Core.Repositories;
+using CMS.Core.Services;
 using CMS.DataAccess;
-using CMS.Infrastructure.Authentication;
+using CMS.Infrastructure.Repositories;
+using CMS.Infrastructure.Services;
 using CMS.Models.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Configuration;
 using System.Text;
 
 namespace CMS
@@ -32,6 +32,14 @@ namespace CMS
 
             builder.Services.Configure<JWT>(builder.Configuration.GetSection("Jwt"));
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IContentRepository, ContentRepository>();
+
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+            //builder.Services.AddScoped<IContentService, Content>
+
 
 
             builder.Services.AddAuthentication(options =>

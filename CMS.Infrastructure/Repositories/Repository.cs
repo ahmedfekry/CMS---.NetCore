@@ -36,9 +36,11 @@ namespace CMS.Infrastructure.Repositories
             return await _dbSet.Where(filters).FirstOrDefaultAsync();
         }
 
-        public Task<IEnumerable<T>> Add(T entity)
+        public T Add(T entity)
         {
-            throw new NotImplementedException();
+           _dbSet.Add(entity);
+
+            return entity;
         }
     }
 }
